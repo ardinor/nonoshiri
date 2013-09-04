@@ -1,5 +1,9 @@
+{% extends "header.html" %}
+
+{% block content %}
 {% for status in statuses %}
     <p><strong>{{ status['user']['name'] }}</strong></p>
     <p>{{ status['text'] }}</p>
     <hr>
 {% endfor %}
+{% endblock %}
