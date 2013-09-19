@@ -5,10 +5,12 @@
 {# to escape for angular #}
 {# can also use {{ '{{' }} for small sections #}
 
+{# {{ status.user.name }} #}
+
 {% raw %}
 <div ng-controller="StatusQueryCtrl">
 <div ng-repeat="status in statuses">
-    <p><strong>{{ status.user.name }}</strong>: {{ status.text }}</p>
+    <p><strong>{{ status.name }}</strong>: {{ status.text }}</p>
 </div>
 </div>
 {% endraw %}
