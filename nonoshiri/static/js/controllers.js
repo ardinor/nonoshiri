@@ -12,7 +12,7 @@ function StatusQueryCtrl($scope, StatusUpdate, $timeout) {
     //$scope.statuses.push(new StatusUpdate(newStatuses));
     // unshift puts the items in the front of the array
     //$scope.status_all.unshift(StatusUpdate.query());
-    $scope.status_all.unshift(StatusUpdate.query());
+    $scope.status_all.unshift(newStatuses);
     //$scope.statuses.push(StatusUpdate.query());
     //angular.forEach(newStatuses, function(value, key){
     //  $scope.statuses.push(key+': '+value);

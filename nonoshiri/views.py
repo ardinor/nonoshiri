@@ -1,7 +1,5 @@
-from flask import render_template, jsonify
+from flask import render_template, jsonify, Response
 from twython import Twython
-import sys
-import codecs
 import json
 
 from nonoshiri import app
@@ -30,12 +28,6 @@ def query(query):
     # 'refresh_url', 'query', 'max_id', 'since_id', 'next_results']
     #return render_template('index.html',
     #                       statuses=statuses)
-    #print(status_list)
-    f = codecs.open('C:/Code/test.txt', 'w', 'utf-8')
-    f.write(str(json.dumps(status_list)))
-    f.write('\n')
-    f.write(str(json.dumps(status_dict)))
-    f.close()
-    #print(bytes(str(status_list), 'UTF-8'))
-    #sys.stdout.buffer.write(bytes(str(status_list), 'UTF-8'))
-    return jsonify(status_dict)
+    return Response(json.dumps(status_list), mimetype='application/json')
+    #same as below?
+    #return jsonify(results=status_list)
