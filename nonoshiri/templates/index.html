@@ -10,9 +10,13 @@
 {% raw %}
 <div ng-controller="StatusQueryCtrl">
 <div ng-repeat="status in statuses">
-    <p><strong>{{ status.name }}</strong>: {{ status.text }}</p>
+    <div ng-repeat="i in status">
+    <p><strong>{{ i.name }}</strong>: {{ i.text }}</p>
 </div>
 </div>
+{{ status_all }}
+</div>
+
 {% endraw %}
 
 
