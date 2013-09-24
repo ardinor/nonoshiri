@@ -1,0 +1,18 @@
+.tweet {
+    height: 150px;
+    border: 2px solid #000066;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-right:50px;
+    margin-left:50px;
+    background-color: white;
+}
+
+.tweet-head {
+    border-bottom: 2px solid #000066;
+}
+
+body {
+    background-color: #6699A1;
+}
+

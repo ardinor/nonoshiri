@@ -13,7 +13,7 @@
             <div ng-controller="StatusQueryCtrl">
                 <div ng-repeat="status in statuses">
                     <!-- This is ugly, gotta be a better way of doing this... -->
-                    <div class="col-6 col-sm-6 col-lg-4" style="padding-top:15px;" ng-repeat="i in status">
+                    <div class="tweet col-6 col-sm-6 col-lg-4" ng-repeat="i in status">
                         <div class="tweet-head">
                             <strong>{{ i.name }}</strong><div class="pull-right">{{ i.user_location }}</div>
                         </div>
@@ -22,7 +22,6 @@
                         </div>
                     </div>
                 </div>
-            {# {{ status_all }} #}
             </div>
 
             {% endraw %}
@@ -33,7 +32,7 @@
 
 
 {#
-
+            {{ status_all }}
 {% for status in statuses %}
     <p><strong>{{ status['user']['name'] }}</strong></p>
     <p>{{ status['text'] }}</p>
