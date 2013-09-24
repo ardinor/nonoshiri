@@ -13,16 +13,18 @@ def index():
 def query(query):
     twitter = Twython(CONSUMER_KEY, CONSUMER_SECRET,
                       ACCESS_TOKEN, ACCESS_SECRET)
-    results = twitter.search(q=query)
+    results = twitter.search(q=query, count=6)
     statuses = results['statuses']
-    status_dict = {}
+    #status_dict = {}
     status_list = []
     #maybe just take out the info we want? less data going back and forth...
     for index, i in enumerate(statuses):
-        status_dict[index] = {'text': i['text'],
-                              'name': i['user']['name']}
+        #status_dict[index] = {'text': i['text'],
+        #                      'name': i['user']['name']}
         status_list.append({'text': i['text'],
-                            'name': i['user']['name']})
+                            'name': i['user']['name'],
+                            'user_location': i['user']['location'],
+                            'coords': i['coordinates']})
     #results['search_metadata'].keys()
     #['since_id_str', 'max_id_str', 'count', 'completed_in',
     # 'refresh_url', 'query', 'max_id', 'since_id', 'next_results']
@@ -30,4 +32,4 @@ def query(query):
     #                       statuses=statuses)
     return Response(json.dumps(status_list), mimetype='application/json')
     #same as below?
-    #return jsonify(results=status_list)
+    #return jsonify(status_list)

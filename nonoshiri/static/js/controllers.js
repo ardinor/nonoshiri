@@ -4,7 +4,6 @@
 function StatusQueryCtrl($scope, StatusUpdate, $timeout) {
   $scope.statuses = [];
   $scope.statuses.push(StatusUpdate.query());
-  //$scope.statuses.push(StatusUpdate.query());
   $scope.status_all = StatusUpdate.query();
   //console.log($scope.statuses);
   $scope.onTimeout = function() {
