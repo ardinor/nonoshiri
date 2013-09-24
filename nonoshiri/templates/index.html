@@ -6,19 +6,29 @@
 {# can also use {{ '{{' }} for small sections #}
 
 {# {{ status.user.name }} #}
+<div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-xs-12 col-sm-9">
+        <div class="row">
+            {% raw %}
+            <div ng-controller="StatusQueryCtrl">
+                <div ng-repeat="status in statuses">
+                    <!-- This is ugly, gotta be a better way of doing this... -->
+                    <div class="col-6 col-sm-6 col-lg-4" style="padding-top:15px;" ng-repeat="i in status">
+                        <div class="tweet-head">
+                            <strong>{{ i.name }}</strong><div class="pull-right">{{ i.user_location }}</div>
+                        </div>
+                        <div>
+                        {{ i.text }}
+                        </div>
+                    </div>
+                </div>
+            {# {{ status_all }} #}
+            </div>
 
-{% raw %}
-<div ng-controller="StatusQueryCtrl">
-<div ng-repeat="status in statuses">
-    <!-- This is ugly, gotta be a better way of doing this... -->
-    <div ng-repeat="i in status">
-        <p><strong>{{ i.name }}</strong>: {{ i.text }}</p>
+            {% endraw %}
+        </div>
     </div>
 </div>
-{{ status_all }}
-</div>
-
-{% endraw %}
 
 
 
